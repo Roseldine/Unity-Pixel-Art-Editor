@@ -21,7 +21,7 @@ namespace StardropTools.UI
         public GameEvent OnToggleFalse => toggle.OnToggleFalse;
 
         public readonly GameEvent<UIToggleButton> OnToggleClass = new GameEvent<UIToggleButton>();
-        public readonly GameEvent<int> OnToggleIndex = new GameEvent<int>();
+        public readonly GameEvent<int> OnToggleID = new GameEvent<int>();
 
         public readonly GameEvent<int> OnToggleTrueIndex = new GameEvent<int>();
         public readonly GameEvent<int> OnToggleFalseIndex = new GameEvent<int>();
@@ -36,7 +36,7 @@ namespace StardropTools.UI
             
             OnClick.AddListener(Toggle);
             OnToggle.AddListener(() => OnToggleClass?.Invoke(this));
-            OnToggle.AddListener(() => OnToggleIndex?.Invoke(ButtonID));
+            OnToggle.AddListener(() => OnToggleID?.Invoke(ButtonID));
 
             OnToggleTrue.AddListener(() => OnToggleTrueIndex?.Invoke(ButtonID));
             OnToggleFalse.AddListener(() => OnToggleFalseIndex?.Invoke(ButtonID));
